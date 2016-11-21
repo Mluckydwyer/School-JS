@@ -1,0 +1,54 @@
+span.listr-logo-header {
+    font-family: Lobster;
+    font-size: 70px;
+}
+
+#l-header {
+    transition: all ease .25s 0s;
+}
+
+#i-header {
+    transition: all ease .25s .1s;
+}
+
+#s-header {
+    transition: all ease .25s .2s;
+}
+
+#t-header {
+    transition: all ease .25s .3s;
+}
+
+#r-header {
+    transition: all ease .25s .4s;
+}
+
+.l {
+    transition: all ease .25s 0s;
+    color: #17C923;
+}
+
+.i {
+    transition: all ease .25s .1s;
+    color: #00B0ED;
+}
+
+.s {
+    transition: all ease .25s .2s;
+    color: #FF6400;
+}
+
+.t {
+    transition: all ease .25s .3s;
+    color: #17C923;
+}
+
+.r {
+    transition: all ease .25s .4s;
+    color: #E0C70E;
+}
+
+.color {
+    text-shadow: 6px 6px #5D0ED6;
+    color: #00B0ED;
+}

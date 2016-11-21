@@ -1,0 +1,461 @@
+@charset "utf-8";
+/* General Mluckydwyer.com CSS Document
+   Mluckydwyer.com All Right Reserved */
+
+@font-face {
+    font-family: ocr;
+    font-style: normal;
+    font-weight: normal;
+    src: url("/School/Listr/Resources/Fonts/ocr");
+}
+
+@font-face {
+    font-family: raleway;
+    font-style: normal;
+    font-weight: normal;
+    src: url("/School/Listr/Resources/Fonts/raleway.ttf");
+}
+
+@font-face {
+    font-family: raleway;
+    font-style: normal;
+    font-weight: bold;
+    src: url("/School/Listr/Resources/Fonts/raleway bold.ttf");
+}
+
+@font-face {
+    font-family: oleo;
+    font-style: normal;
+    font-weight: normal;
+    src: url("/School/Listr/Resources/Fonts/oleo.ttf");
+}
+
+@font-face {
+    font-family: lobster;
+    font-style: normal;
+    font-weight: normal;
+    src: url("/School/Listr/Resources/Fonts/lobster.ttf");
+}
+
+html, body {
+    height: 100vh;
+    min-height: 500px;
+    min-width: 700px;
+    position: relative;
+    margin: 0;
+}
+
+.container {
+    min-width: 100%;
+    padding: 0;
+}
+
+.wrap {
+    min-width: 100%;
+}
+
+/* ---------- Responsive Design ---------- */
+
+/* ---------- Responsive Design 700px SMALL ---------- */
+
+@media screen and (max-width: 1500px) {
+
+    /* $&=---- NAV BAR ----=&$ */
+    .header-logo {
+        width: 90px;
+        height: 55px;
+    }
+
+    #header-logo-youtube {
+        height: 25px;
+        margin-top: 7px;
+    }
+
+    #header-logo-github {
+        height: 25px;
+        margin-top: 7px;
+    }
+
+    #header-logo-google {
+        height: 25px;
+        margin-top: 7px;
+        padding-right: 2px;
+    }
+
+    .header-link {
+        font-size: 20px;
+    }
+
+    #pages {
+        margin-top: 10px;
+    }
+
+    #about {
+        padding-left: -10px;
+        padding-right: 10px;
+    }
+
+    #Projects {
+        padding-right: 10px;
+    }
+
+    input[name="search"] {
+        width: 25px;
+        height: 25px;
+        font-size: 0;
+        margin-top: 5px;
+        background-size: 25px 25px;
+        background-position: 0 0;
+    }
+
+    input[name="search"]:focus {
+        width: 140px;
+        border-bottom: 1px solid #ffffff;
+        padding-bottom: 5px;
+        margin-top: 5px;
+        padding-left: 35px;
+        padding-top: 7px;
+        font-size: 15px;
+
+    }
+
+    /* $&=---- Content ----=&$ */
+    .full-page-title {
+        font-size: 100px;
+        margin-bottom: 0;
+    }
+
+    .page-title {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+
+    /* $&=---- SIDE BAR ----=&$ */
+    div.side-bar {
+        top: 100px;
+        width: 70px;
+        visibility: hidden;
+    }
+
+    /* $&=---- Footer ----=&$ */
+    .footer {
+        height: 40px;
+    }
+
+    .footer-link, .footer-text {
+        font-size: small;
+    }
+
+}
+
+/* ---------- Responsive Design 1500px BIG ---------- */
+
+@media screen and (min-width: 1500px) {
+
+    /* $&=---- NAV BAR ----=&$ */
+    .header-logo {
+        width: 180px;
+        height: 110px;
+    }
+
+    #header-logo-youtube {
+        height: 30px;
+        margin-top: 15px;
+    }
+
+    #header-logo-github {
+        height: 30px;
+        margin-top: 15px;
+    }
+
+    #header-logo-google {
+        height: 30px;
+        margin-top: 15px;
+        padding-right: 5px;
+    }
+
+    .header-link {
+        font-size: 40px;
+    }
+
+    #pages {
+        margin-top: 6px;
+    }
+
+    #about {
+        padding-left: 50px;
+        padding-right: 70px;
+    }
+
+    #Projects {
+        padding-right: 70px;
+    }
+
+    input[name="search"] {
+        width: 45px;
+        height: 45px;
+        font-size: 0;
+        margin-top: 7.5px;
+        background-size: 35px 35px;
+        background-position: 5px 5px;
+    }
+
+    input[name="search"]:focus {
+        width: 280px;
+        border-bottom: 1px solid #ffffff;
+        padding-bottom: 5px;
+        margin-top: 5px;
+        padding-left: 60px;
+        padding-top: 7px;
+        font-size: 25px;
+
+    }
+
+    /* $&=---- Content ----=&$ */
+    .full-page-title {
+        font-size: 150px;
+        margin-bottom: 0;
+    }
+
+    .page-title {
+        font-size: 65px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        margin-left: 30px;
+    }
+
+    /* $&=---- SIDE BAR ----=&$ */
+    div.side-bar {
+        top: 100px;
+        width: 70px;
+        visibility: hidden;
+    }
+
+    /* $&=---- Footer ----=&$ */
+    .footer {
+        height: 60px;
+    }
+
+    .footer-link, .footer-text {
+        font-size: large;
+    }
+
+}
+
+/* ---------- NAV BAR ---------- */
+
+.header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    padding: 2vh;
+}
+
+.header-icon-link {
+    display: inline;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    float: right;
+    transition: all .5s ease;
+}
+
+.header-logo {
+    float: left;
+    text-decoration: none;
+    background-size: contain !important;
+    transition: all .5s ease;
+    display: block;
+}
+
+ul {
+    list-style: none;
+    display: inline-block;
+}
+
+.nav-li {
+    display: inline-block;
+}
+
+.header-link {
+    font-family: raleway;
+    font-weight: bold;
+    padding: 2% 4% 2% 4%;
+    text-transform: uppercase;
+    color: #ffffff;
+    white-space: nowrap;
+    text-decoration: none;
+    background: rgba(0, 0, 0, .6);
+    border-radius: 7px;
+    background-clip: border-box;
+    transition: all .7s ease;
+}
+
+.header-link:hover {
+    color: #00B0ED;
+}
+
+input[name="search"] {
+    color: #ffffff;
+    font-family: raleway;
+    border: none;
+    font-weight: bold;
+    background-color: transparent;
+    background-image: url("/School/Listr/Resources/Images/Search.png");
+    background-repeat: no-repeat;
+    transition: all 0.4s ease-in-out;
+}
+
+input[name="search"]:focus {
+    border-bottom: 1px solid #ffffff;
+}
+
+/* ---------- Sidebar ---------- */
+
+div.side-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: transparent;
+}
+
+/* ---------- Content ---------- */
+
+.content {
+    height: auto;
+}
+
+.page-focus-container {
+    padding-top: 15vh;
+    height: 100vh;
+    align-items: center;
+}
+
+.full-page-title {
+    color: #ffffff;
+    font-family: raleway;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px #000000;
+}
+
+.page-title {
+    color: #ffffff;
+    font-family: oleo;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.page-title > span {
+    padding: 0 7px 0 7px;
+}
+
+.tile {
+    height: 100vh;
+    margin: 10vh 0 10vh;
+    display: block;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+    background: #ffffff;
+    border-radius: 7px;
+    padding: 3px;
+    transition: all .3s;
+}
+
+.card:hover {
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, .6);
+}
+
+.card-container {
+    padding: 2px 16px;
+}
+
+.card-image {
+    width: 100%;
+}
+
+/* ---------- Snackbar ---------- */
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 5vh;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 5vh;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+.show {
+    visibility: visible !important;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+#snackbar {
+    visibility: hidden;
+    background-color: #333;
+    left: 50%;
+    width: 40vw;
+    margin-left: -20vw;
+    text-align: center;
+    font-family: ocr;
+    color: #17C923;
+    position: fixed;
+    border-radius: 5px;
+    bottom: 5vh;
+    padding: 1vw;
+    z-index: 1;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+    background-color: #5D0ED6;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    position: static;
+}
+
+.footer-container {
+    bottom: 0;
+    padding-top: auto;
+    padding-bottom: auto;
+}
+
+.footer-links-list {
+    margin-top: 0;
+}
+
+.footer-link-list-item {
+    display: inline-block;
+    padding-bottom: auto;
+    padding-left: auto;
+    padding-right: auto;
+    font-family: ocr;
+}
+
+.footer-text, .footer-link {
+    color: #E0C70E;
+}
+
+a.footer-link:hover {
+    color: #17C923;
+    transition: all .3s ease-in-out;
+}

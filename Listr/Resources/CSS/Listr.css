@@ -1,0 +1,211 @@
+@charset "utf-8";
+/* ______ Page Mluckydwyer.com CSS Document
+   Mluckydwyer.com All Right Reserved */
+
+/* ---------- Responsive Design ---------- */
+
+/* ---------- Responsive Design 700px SMALL ---------- */
+
+@media screen and (max-width: 1500px) {
+
+
+
+}
+
+/* ---------- Responsive Design 1500px BIG ---------- */
+
+@media screen and (min-width: 1500px){
+
+
+
+}
+
+.header {
+    margin-bottom: 50px;
+    background: rgba(0, 0, 0, .05);
+}
+
+#pages {
+    margin-top: 30px;
+    padding-left: 0;
+}
+
+.header-link {
+    font-family: oleo;
+    font-size: 30px;
+    background: none;
+    padding: 0 20px 0 20px;
+    color: #00B0ED;
+    transition: all ease .25s;
+}
+
+.header-link:hover, .header-link:active, .header-link:focus {
+    text-shadow: 6px 6px #5D0ED6;
+}
+
+.page-focus-container {
+    height: 100vh;
+    padding-top: 200px;
+    align-items: center;
+    background-color: rgba(93, 14, 214, .8);
+}
+
+#header-logo-listr {
+    padding-right: 40px;
+    width: auto;
+    height: auto;
+}
+
+.listr-logo-main {
+    font-family: Lobster;
+    font-size: 150px;
+}
+
+@keyframes shadowRoll {
+    0% {text-shadow: none}
+    20% {text-shadow: -10px -10px #5D0ED6}
+    40% {text-shadow: 10px -10px #5D0ED6}
+    60% {text-shadow: 10px 10px #5D0ED6}
+    80% {text-shadow: -10px 10px #5D0ED6}
+    100% {text-shadow: none}
+}
+
+#big-logo {
+    text-align: center;
+    animation: shadowRoll;
+    text-shadow: 10px 10px #5D0ED6;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    transition: all ease .5s;
+}
+
+#list-input {
+    margin-top: 50px;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    position: absolute;
+    text-align: center;
+    border-radius: 30px;
+    width: 60vw;
+    height: 50px;
+    background-color: #17C923;
+    border: none;
+}
+
+#list-type-dropdown {
+    position: absolute;
+    display: inline-block;
+    left: -.5vw;
+    top: 0;
+    transition: all ease .25s;
+}
+
+#list-type-dropdown-button {
+    background-color: #FF6400;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    display: inline;
+    border: none;
+    color: #ffffff;
+    font-family: raleway;
+    float: left;
+    font-size: 30px;
+    font-weight: bold;
+    height: 50px;
+    min-width: 10vw;
+    width: 100%;
+    transition: all ease .25s;
+    cursor: pointer;
+}
+
+#list-type-dropdown-button:hover {
+    background-color: #e65c00;
+}
+
+#center-main-input {
+    color: #ffffff;
+    background: transparent;
+    width: 41vw;
+    height: 50px;
+    font-family: raleway;
+    border: none;
+    font-weight: bold;
+    font-size: 30px;
+    padding-left: 11vw;
+    padding-right: 10vw;
+    text-align: left;
+    transition: all ease 1s;
+}
+
+#make-list-button {
+    width: 7vw;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #00bcff;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: inline;
+    border: none;
+    color: #ffffff;
+    font-size: 30px;
+    font-family: raleway;
+    font-size: 30px;
+    font-weight: bold;
+    transition: all ease .25s;
+    cursor: pointer;
+}
+
+#make-list-button:hover, #make-list-button:active, #make-list-button:focus {
+    background-color: #00B0ED;
+}
+
+.dropdown-content {
+    display: none;
+    transition: all ease .25s;
+    width: inherit;
+    background-color: #FF6400;
+    top: 50px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    margin-top: 50px;
+}
+
+.dropdown-content a {
+    color: #ffffff;
+    padding: auto;
+    display: block;
+    text-decoration: none;
+    border-top: 2px dashed #e65c00;
+    font-size: 30px;
+    font-family: raleway;
+    transition: all ease .25s;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+    background-color: #e65c00;
+}
+
+.show-dropdown {
+    display: block;
+    transition: all ease .25s;
+}
+
+.bend-borders {
+    border-radius: 30px !important;
+}
+
+.shrink-textbox {
+}
+
+.dropdown-open {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0;
+
+    transition: width ease 1s;
+}

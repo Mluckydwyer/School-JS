@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+    <!--  General Header  -->
+    <link rel="stylesheet" type="text/css" href="Resources/CSS/General.css">
+    <link rel="icon" type="image/png" href="Resources/Images/Icon.png">
+    <script type="text/javascript" src="Resources/JS/Snackbar.js"></script>
+    <script type="text/javascript" src="Resources/JS/Input.js"></script>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+
+
+    <!--  Page  -->
+    <link rel="stylesheet" type="text/css" href="Resources/CSS/Listr.css">
+    <link rel="stylesheet" type="text/css" href="Resources/CSS/Logo.css">
+    <script type="text/javascript" src="Resources/JS/Logo.js"></script>
+    <script type="text/javascript" src="Resources/JS/Dropdown.js"></script>
+    <title>Listr - Home</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="header">
+        <header>
+            <div class="header-content">
+
+                <a href="/listr" id="header-logo-listr" class="header-logo" title="Listr Logo" onmouseover="logoHover()" onmouseout="reset()">
+                    <span id="l-header" class="l listr-logo-header">L</span>
+                    <span id="i-header" class="i listr-logo-header">i</span>
+                    <span id="s-header" class="s listr-logo-header">s</span>
+                    <span id="t-header" class="t listr-logo-header">t</span>
+                    <span id="r-header" class="r listr-logo-header">r</span>
+                </a>
+
+                <input style="visibility: hidden" class="header-icon-link" type="text" name="search" placeholder="Search" onclick="showOFO()">
+
+                <nav id="top-nav">
+                    <ul id="pages">
+                        <li id="abour" class="nav-li"><a class="header-link" onclick="showOFO()" href="javascript:;">Test 1</a></li>
+                        <li id="projects" class="nav-li"><a class="header-link" onclick="showOFO()" href="javascript:;">Test 2</a></li>
+                        <li id="login" class="nav-li"><a class="header-link" onclick="showOFO()" href="javascript:;">Test 3</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <div id="snackbar">Test</div>
+    </div>
+
+    <div id="listr" class="content">
+        <div class="page-focus-container">
+
+            <div id="big-logo">
+                <span class="l listr-logo-main">L</span>
+                <span class="i listr-logo-main">i</span>
+                <span class="s listr-logo-main">s</span>
+                <span class="t listr-logo-main">t</span>
+                <span class="r listr-logo-main">r</span>
+            </div>
+
+            <div id="list-input">
+
+                <input id="center-main-input" type="text" autocomplete="off" autofocus placeholder="Paste a Youtube playlist URL">
+
+                <div id="list-type-dropdown">
+                    <button id="list-type-dropdown-button" disabled>Playlist</button>
+
+                    <div id="dropdown" class="dropdown-content"></div>
+                </div>
+
+                <button id="make-list-button" onclick="parse(document.getElementById('center-main-input').value)">></button>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <footer>
+            <div class="footer-container">
+
+                <ul class="footer-links-list">
+                    <li class="footer-link-list-item"><p class="footer-text">Site & Logo Design &#169; 2016 <a
+                            class="footer-link" href="/">Mluckydwyer.com</a></p></li>
+                </ul>
+
+            </div>
+        </footer>
+    </div>
+</div>
+</body>
+</html>
