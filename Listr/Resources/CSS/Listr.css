@@ -20,6 +20,10 @@
 
 }
 
+body {
+    min-width: 800px;
+}
+
 .header {
     margin-bottom: 50px;
     background: rgba(0, 0, 0, .05);
@@ -43,8 +47,11 @@
     text-shadow: 6px 6px #5D0ED6;
 }
 
+#listr {
+    min-height: 100%;
+}
+
 .page-focus-container {
-    height: 100vh;
     padding-top: 200px;
     align-items: center;
     background-color: rgba(93, 14, 214, .8);
@@ -81,12 +88,12 @@
 
 #list-input {
     margin-top: 50px;
-    margin-left: 20vw;
-    margin-right: 20vw;
-    position: absolute;
+    margin-left: 20%;
+    margin-right: 20%;
+    position: relative;
     text-align: center;
     border-radius: 30px;
-    width: 60vw;
+    width: 60%;
     height: 50px;
     background-color: #17C923;
     border: none;
@@ -95,7 +102,7 @@
 #list-type-dropdown {
     position: absolute;
     display: inline-block;
-    left: -.5vw;
+    left: -.5%;
     top: 0;
     transition: all ease .25s;
 }
@@ -112,7 +119,7 @@
     font-size: 30px;
     font-weight: bold;
     height: 50px;
-    min-width: 10vw;
+    min-width: 10%;
     width: 100%;
     transition: all ease .25s;
     cursor: pointer;
@@ -131,14 +138,13 @@
     border: none;
     font-weight: bold;
     font-size: 30px;
-    padding-left: 11vw;
-    padding-right: 10vw;
+    padding-left: 11%;
     text-align: left;
     transition: all ease 1s;
 }
 
 #make-list-button {
-    width: 7vw;
+    width: 7%;
     height: 50px;
     position: absolute;
     right: 0;
@@ -208,4 +214,58 @@
     border-bottom-right-radius: 0;
 
     transition: width ease 1s;
+}
+
+#main-list {
+    padding-top: 50px;
+    padding-bottom: 100px;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+    position: absolute;
+    text-align: center;
+    border-radius: 30px;
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible !important;
+}
+
+.result-list {
+    width: 100%;
+    padding: 0;
+    transition: all ease .25s ;
+}
+
+.result {
+    width: 100%;
+    color: #5D0ED6;
+    font-size: medium;
+    font-family: raleway;
+    font-weight: bold;
+    background-color: #00B0ED;
+    background-clip: padding-box;
+    padding: 10px;
+    margin: 25px 0 25px 0;
+    display: inline-flex;
+    transition: all ease .25s ;
+}
+
+.video-title {
+    color: #5D0ED6;
+    transition: all ease .25s ;
+}
+
+.video-image {
+    width: 120px;
+    height: 68px;
+
+}
+
+.video-title:hover, .video-title:active, .video-title:focus {
+    color: #17C923;
+}
+
+#spotlight {
 }

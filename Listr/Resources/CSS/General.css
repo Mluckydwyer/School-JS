@@ -322,12 +322,14 @@ div.side-bar {
 /* ---------- Content ---------- */
 
 .content {
-    height: auto;
+
 }
 
 .page-focus-container {
     padding-top: 15vh;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
+
     align-items: center;
 }
 
@@ -430,7 +432,8 @@ div.side-bar {
     overflow: hidden;
     text-align: center;
     width: 100%;
-    position: static;
+    height: 50px;
+    position: absolute;
 }
 
 .footer-container {

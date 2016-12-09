@@ -35,3 +35,4 @@ function parse(input) {
         return query;
     }
 }
+
