@@ -2,6 +2,8 @@
 /* General Mluckydwyer.com CSS Document
    Mluckydwyer.com All Right Reserved */
 
+Youtube-Playlist-Listr
+
 @font-face {
     font-family: ocr;
     font-style: normal;
@@ -36,6 +38,47 @@
     font-weight: normal;
     src: url("/School/Listr/Resources/Fonts/lobster.ttf");
 }
+
+
+
+
+/* Github Fonts */
+
+@font-face {
+    font-family: ocr;
+    font-style: normal;
+    font-weight: normal;
+    src: url("/Youtube-Playlist-Listr/Listr/Resources/Fonts/ocr");
+}
+
+@font-face {
+    font-family: raleway;
+    font-style: normal;
+    font-weight: normal;
+    src: url("/Youtube-Playlist-Listr/Listr/Resources/Fonts/raleway.ttf");
+}
+
+@font-face {
+    font-family: raleway;
+    font-style: normal;
+    font-weight: bold;
+    src: url("/Youtube-Playlist-Listr/Listr/Resources/Fonts/raleway bold.ttf");
+}
+
+@font-face {
+    font-family: oleo;
+    font-style: normal;
+    font-weight: normal;
+    src: url("/Youtube-Playlist-Listr/Listr/Resources/Fonts/oleo.ttf");
+}
+
+@font-face {
+    font-family: lobster;
+    font-style: normal;
+    font-weight: normal;
+    src: url("/Youtube-Playlist-Listr/Listr/Resources/Fonts/lobster.ttf");
+}
+
 
 html, body {
     height: 100vh;
