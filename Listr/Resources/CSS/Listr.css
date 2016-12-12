@@ -241,21 +241,23 @@ body {
 
 .result {
     width: 100%;
-    color: #5D0ED6;
-    font-size: medium;
-    font-family: raleway;
-    font-weight: bold;
-    background-color: #00B0ED;
+    color: #00B0ED;
+    font-size: 25px;
+    font-family: Lobster;
+    font-weight: normal;
+    background-color: #17C923;
     background-clip: padding-box;
     margin: 25px 0 25px 0;
     display: inline-flex;
     transition: all ease .25s;
-    border-radius: 15px;
-    border: dashed 5px #17C923;
+    border: solid 12px #e65c00;
+    text-align: left;
+    min-height: 50px;
 }
 
 .video-title {
     color: #5D0ED6;
+    height: 100%;
     transition: all ease .25s;
 }
 
@@ -267,7 +269,7 @@ body {
 }
 
 .video-title:hover, .video-title:active, .video-title:focus {
-    color: #17C923;
+    color: #E0C70E;
 }
 
 #spotlight {
