@@ -36,7 +36,7 @@
 
                 <nav id="top-nav">
                     <ul id="pages">
-                        <li id="abour" class="nav-li"><a class="header-link" onclick="showOFO()" href="javascript:;">Test 1</a></li>
+                        <li id="about" class="nav-li"><a class="header-link" onclick="showOFO()" href="javascript:;">Test 1</a></li>
                         <li id="projects" class="nav-li"><a class="header-link" onclick="showOFO()" href="javascript:;">Test 2</a></li>
                         <li id="login" class="nav-li"><a class="header-link" onclick="showOFO()" href="javascript:;">Test 3</a></li>
                     </ul>
@@ -46,7 +46,7 @@
         </header>
 
         <div id="snackbar">Test</div>
-    </div>
+</div>
 
     <div id="listr" class="content">
         <div class="page-focus-container">
@@ -61,16 +61,26 @@
 
             <div id="list-input">
 
-                <input id="center-main-input" type="text" autocomplete="off" autofocus placeholder="Paste a Youtube playlist URL">
-
                 <div id="list-type-dropdown">
                     <button id="list-type-dropdown-button" disabled>Playlist</button>
 
                     <div id="dropdown" class="dropdown-content"></div>
                 </div>
 
+                <input id="center-main-input" type="text" autocomplete="off" autofocus placeholder="Paste a Youtube playlist URL">
+
                 <button id="make-list-button" onclick="query()">></button>
 
+            </div>
+
+            <div id="main-list" class="visible">
+                <div id="spotlight" class="result">
+                    <bold>spotlight</bold>
+                </div>
+
+                <div id="list">
+                    <ul class="result-list" id="vid-list"></ul>
+                </div>
             </div>
 
         </div>

@@ -54,6 +54,7 @@ body {
 .page-focus-container {
     padding-top: 200px;
     align-items: center;
+    box-sizing: border-box;
     background-color: rgba(93, 14, 214, .8);
 }
 
@@ -222,7 +223,7 @@ body {
     margin-left: 20%;
     margin-right: 20%;
     width: 60%;
-    position: absolute;
+    position: relative;
     text-align: center;
     border-radius: 30px;
     visibility: hidden;
@@ -246,21 +247,23 @@ body {
     font-weight: bold;
     background-color: #00B0ED;
     background-clip: padding-box;
-    padding: 10px;
     margin: 25px 0 25px 0;
     display: inline-flex;
-    transition: all ease .25s ;
+    transition: all ease .25s;
+    border-radius: 15px;
+    border: dashed 5px #17C923;
 }
 
 .video-title {
     color: #5D0ED6;
-    transition: all ease .25s ;
+    transition: all ease .25s;
 }
 
 .video-image {
     width: 120px;
     height: 68px;
-
+    padding-right: 10px;
+    border-radius: inherit;
 }
 
 .video-title:hover, .video-title:active, .video-title:focus {
