@@ -29,7 +29,7 @@ function queryGo() {
     console.log(PLInfo);
     console.log(PLItems);
 
-    setSpotlight(PLInfo);
+    //setSpotlight(PLInfo);
     setList(PLItems);
 }
 
@@ -56,9 +56,25 @@ function buildRequests(playlistID) {
 }
 
 function setSpotlight(info) {
+    var sl = document.getElementById('spotlight');
 
+    var image = document.createElement("img");
+    image.setAttribute('class', 'spotlight-image');
+    image.setAttribute('src', info.snippet.thumbnails.maxres.url);
 
+    var title = document.createElement("a");
+    title.setAttribute('class', 'spotlight-title');
+    title.setAttribute('href', 'https://youtube.com/playlist?list=' + info.id);
+    title.innerHTML = info.snippet.title;
 
+    var author = document.createElement("a");
+    title.setAttribute('class', 'spotlight-author');
+    title.setAttribute('href', 'https://youtube.com/channel/' + info.snippet.channelId);
+    title.innerHTML = info.snippet.channelTitle;
+
+    sl.appendChild(image);
+    sl.appendChild(title);
+    sl.appendChild(author);
 }
 
 function setList(vids) {
@@ -87,6 +103,8 @@ function setList(vids) {
 
         document.getElementById('vid-list').appendChild(html);
     }
+
+    document.getElementById('main-list').setAttribute('class', 'visible');
 }
 
 

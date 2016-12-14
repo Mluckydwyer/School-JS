@@ -241,7 +241,7 @@ body {
 
 .result {
     width: 100%;
-    color: #00B0ED;
+    color: #5D0ED6;
     font-size: 25px;
     font-family: Lobster;
     font-weight: normal;
@@ -253,6 +253,11 @@ body {
     border: solid 12px #e65c00;
     text-align: left;
     min-height: 50px;
+    border-radius: 15px;
+}
+
+.spotlight {
+    font-size: 40px;
 }
 
 .video-title {
@@ -260,12 +265,29 @@ body {
     height: 100%;
     transition: all ease .25s;
 }
+.spotlight-title {
+    color: #5D0ED6;
+    height: 100%;
+    transition: all ease .25s;
+}
+
+.spotlight-author {
+    color: #5D0ED6;
+    height: 100%;
+    transition: all ease .25s;
+    font-size: 25px;
+}
+
+.spotlight-image {
+    width: 480px;
+    height: 272px;
+    padding-right: 10px;
+}
 
 .video-image {
     width: 120px;
     height: 68px;
     padding-right: 10px;
-    border-radius: inherit;
 }
 
 .video-title:hover, .video-title:active, .video-title:focus {
