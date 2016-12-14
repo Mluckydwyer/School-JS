@@ -3,6 +3,8 @@
  */
 
 var plLink;
+var playlistVidsNextPage;
+var videoCount = 1;
 
 function setup() {
     document.getElementById('center-main-input').onkeypress = function (e) {
@@ -26,11 +28,10 @@ function queryGo() {
     var PLInfo = JSON.parse(request(requestURLS.info));
     var PLItems = JSON.parse(request(requestURLS.items));
 
-    console.log(PLInfo);
-    console.log(PLItems);
-
-    //setSpotlight(PLInfo);
+    setSpotlight(PLInfo.items[0].snippet);
     setList(PLItems);
+
+    console.log(PLItems);
 }
 
 function buildRequests(playlistID) {
@@ -60,27 +61,41 @@ function setSpotlight(info) {
 
     var image = document.createElement("img");
     image.setAttribute('class', 'spotlight-image');
-    image.setAttribute('src', info.snippet.thumbnails.maxres.url);
+    image.setAttribute('src', info.thumbnails.maxres.url);
+
+    var infoDiv = document.createElement("div");
+    infoDiv.setAttribute('class', 'info-part');
+
+    var titleDiv = document.createElement("div");
+    titleDiv.setAttribute('class', 'info-block');
 
     var title = document.createElement("a");
     title.setAttribute('class', 'spotlight-title');
     title.setAttribute('href', 'https://youtube.com/playlist?list=' + info.id);
-    title.innerHTML = info.snippet.title;
+    title.innerHTML = info.title;
+
+    titleDiv.appendChild(title);
+
+    var authorDiv = document.createElement("div");
+    authorDiv.setAttribute('class', 'info-block');
 
     var author = document.createElement("a");
-    title.setAttribute('class', 'spotlight-author');
-    title.setAttribute('href', 'https://youtube.com/channel/' + info.snippet.channelId);
-    title.innerHTML = info.snippet.channelTitle;
+    author.setAttribute('class', 'spotlight-author');
+    author.setAttribute('href', 'https://youtube.com/channel/' + info.channelId);
+    author.innerHTML = info.channelTitle;
+
+    authorDiv.appendChild(author);
+
+    infoDiv.appendChild(titleDiv);
+    infoDiv.appendChild(authorDiv);
 
     sl.appendChild(image);
-    sl.appendChild(title);
-    sl.appendChild(author);
+    sl.appendChild(infoDiv);
 }
 
 function setList(vids) {
     for (var i = 0; i < vids.items.length; i++) {
         var vid = vids.items[i];
-        console.log(vid);
 
         var image = document.createElement("img");
             image.setAttribute('class', 'video-image');
@@ -89,7 +104,9 @@ function setList(vids) {
         var title = document.createElement("a");
             title.setAttribute('class', 'video-title');
             title.setAttribute('href', 'https://youtube.com/watch?v=' + vid.snippet.resourceId.videoId + '&list=' + playlistID);
-            title.innerHTML = (vid.snippet.position + 1) + ". " + vid.snippet.title;
+            title.innerHTML = videoCount + ". " + vid.snippet.title;
+
+        videoCount++;
 
         var description = document.createElement("div");
             description.setAttribute('class', 'video-description');
@@ -107,6 +124,20 @@ function setList(vids) {
     document.getElementById('main-list').setAttribute('class', 'visible');
 }
 
+function loadMore() {
+    var q = "https://www.googleapis.com/youtube/v3/playlistItems";
+    q += "?client_id=257896472718-gd1g63fmks68jaa8tvlhl890ru3j86lf.apps.googleusercontent.com";
+    q += "&key=AIzaSyAuiLKay4dxwGKC-5FehIQ8w41sQLHAjdc";
+    q += "&response_type=token";
+    q += "&part=snippet";
+    q += "&maxResults=50";
+    q += "&playlistId=" + playlistID;
+    q += "&pageToken = " + playlistVidsNextPage;
+
+    var response = JSON.parse(request(q));
+    playlistVidsNextPage = response.nextPageToken;
+    setList(response);
+}
 
 function request(requestURL) {
         var request = new XMLHttpRequest();

@@ -248,12 +248,20 @@ body {
     background-color: #17C923;
     background-clip: padding-box;
     margin: 25px 0 25px 0;
-    display: inline-flex;
+    display: flex;
     transition: all ease .25s;
     border: solid 12px #e65c00;
     text-align: left;
     min-height: 50px;
     border-radius: 15px;
+}
+
+.info-part {
+
+}
+
+.info-block {
+    display: block;
 }
 
 .spotlight {
@@ -290,7 +298,7 @@ body {
     padding-right: 10px;
 }
 
-.video-title:hover, .video-title:active, .video-title:focus {
+.video-title:hover, .video-title:active, .video-title:focus, .spotlight-author:hover, .spotlight-author:active, .spotlight-author:focus, .spotlight-title:hover, .spotlight-title:active, .spotlight-title:focus {
     color: #E0C70E;
 }
 
