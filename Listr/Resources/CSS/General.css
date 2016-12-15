@@ -2,8 +2,6 @@
 /* General Mluckydwyer.com CSS Document
    Mluckydwyer.com All Right Reserved */
 
-Youtube-Playlist-Listr
-
 @font-face {
     font-family: ocr;
     font-style: normal;
@@ -42,7 +40,7 @@ Youtube-Playlist-Listr
 
 
 
-/* Github Fonts */
+/* Github Fonts
 
 @font-face {
     font-family: ocr;
@@ -79,6 +77,7 @@ Youtube-Playlist-Listr
     src: url("/Youtube-Playlist-Listr/Listr/Resources/Fonts/lobster.ttf");
 }
 
+*/
 
 html, body {
     height: 100vh;
