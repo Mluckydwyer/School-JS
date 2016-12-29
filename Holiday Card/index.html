@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dwyer Card 2K16</title>
+    <link rel="stylesheet" type="text/css" href="Card.css">
+    <link rel="icon" type="image/png" href="Icon.png">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <script type="text/javaScript" src="Card.js"></script>
+</head>
+<body onresize="resizeCanvas()">
+
+<audio autoplay loop>
+    <source src="Leave This Place.mp3" type="audio/mpeg">
+</audio>
+
+<canvas id="canvas" class="hide"></canvas>
+
+<div class="overlay show" id="backdrop">
+    <a id="overlay-logo" title="Mluckydwyer Logo"></a>
+</div>
+
+<div id="loader" class="hide">
+    <div id="loader-icon"></div>
+    <a id="loader-logo" title="Mluckydwyer Logo"></a>
+</div>
+
+<div id="counter" class="hide"></div>
+
+<div class="username-form show" id="name-pop">
+
+    <b id="card-text" class="show">Card</b><br>
+
+    <div class="info-field show" id="info-field">
+        <input type="text" id="username-input" name="username" placeholder="Name" autocomplete="off" required
+               minlength="3" maxlength="15"><br>
+        <a id="submit-un" href="Javascript:;" onclick="getUsername()">Let It Snow!</a>
+    </div>
+
+</div>
+
+<div id="snackbar" class="hide"></div>
+</body>
+</html>
