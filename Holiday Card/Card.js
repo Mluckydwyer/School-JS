@@ -8,28 +8,25 @@ var context = null;
 var flakes = [];
 
 var name = "Joyous Citizen";
-var flakeCount = 300;
+var flakeCount = 500;
 var flakeSlope = -.5;
 var flakeMaxSize = 10;
 var flakeMinSize = 3;
-var flakeMaxSpeed = 6;
-var flakeMinSpeed = 1;
+var flakeMaxSpeed = 10;
+var flakeMinSpeed = 3;
 var fancyGraphics = true;
+var loadTime = 10;
 var playerSpeed = (flakeMaxSpeed + flakeMinSpeed) / 2;
-var col;
 var keys = [false, false, false, false]; // up, down, left, right
+var playerSize = 6;
+var pX = 0;
+var pY = 0;
+var collided = false;
 
 var setup = function () {
     canvas = document.getElementById("canvas");
     context = canvas.getContext('2d');
     resizeCanvas();
-
-    col = new Array(canvas.width);
-    for (var i = 0; i < canvas.width; i++)
-        col[i] = new Array(canvas.height);
-
-    console.log(col.length + "  " + col[0].length)
-    resetCols();
 
     for (var i = 0; i < flakeCount - 1; i++) {
         flakes.push(new flake(false));
@@ -97,12 +94,12 @@ var getUsername = function () {
         document.getElementById("loader-icon").className = document.getElementById("loader-icon").className.replace("loading", "");
         document.getElementById("backdrop").className = document.getElementById("backdrop").className.replace("show", "hide");
 
-        document.getElementById("card-text").innerHTML = "Happy Holidays!";
+        document.getElementById("card-text").innerHTML = "Happy Day!";
         document.getElementById("card-text").className = document.getElementById("card-text").className.replace("hide", "show");
 
         showSnack("Let it snow..." + name, 5);
         setInterval(draw, 30);
-    }, 15000);
+    }, loadTime * 1000);
     
     // for (var i = 0; i < 600; i++) draw();
 };
@@ -127,23 +124,24 @@ var flake = function (isPlayer) {
     this.d = d;
     this.s = flakeMinSpeed + Math.random() * (flakeMaxSpeed - flakeMinSpeed);
     this.r = flakeMinSize + (Math.random() * (flakeMaxSize - flakeMinSize));
+    if (isPlayer) this.r = playerSize;
     this.p = isPlayer;
 };
 
-var resetCols = function () {
-    for (var i = 0; i < canvas.width; i++)
-        for (var j = 0; j < canvas.height; j++)
-            col[i][j] = false;
-};
+var isColliding = function (f) {
 
-var isColiding = function (f) {
-    var c = false;
+    var a = f.x;
+    var b = f.y;
+    var c = f.x + f.r;
+    var d = f.y + f.r;
+    var e = pX + playerSize;
+    var g = pY + playerSize;
 
-    for (var i = f.x; i < f.r; i++)
-        for (var j = f.y; j < f.r; j++)
-            if (col[i][j]) c = true;
+    for (var i = a; i < c; i++)
+        for (var j = b; j < d; j++)
+            if ((i >= pX && i <= e) && (j <= g && j >= pY)) return true;
 
-    return c;
+    return false;
 };
 
 // Draw Loop
@@ -160,8 +158,6 @@ var draw = function () {
     img.src = "http://conestogalogcabins.com/wp-content/uploads/2013/12/2013-07-06-Tomovick-002-1280x720.jpg";
     //ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    resetCols();
 
     var f;
     for (var i = flakes.length - 1; i >= 0; i--) {
@@ -183,15 +179,14 @@ var draw = function () {
                 ctx.fillStyle = '#62f442';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
             }
-            if (isColiding(f)) {
-                showSnack("Try again");
-                flakes[i] = new flake(true);
-                ctx.fillStyle = '#ff1d00';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-            }
 
+
+            console.log(collided);
+            collided = false;
             f.x = Math.floor(f.x);
             f.y = Math.floor(f.y);
+            pX = f.x;
+            pY= f.y;
         }
         else {
             if (f.y >= canvas.height || f.x < 0 || f.x > canvas.width) {
@@ -205,12 +200,6 @@ var draw = function () {
 
             f.x = Math.floor(f.x);
             f.y = Math.floor(f.y);
-
-            for (var x = f.x; x < f.r; x++)
-                for (var y = f.y; y < f.r; y++) {
-                    if (x > canvas.width - 1 || y > canvas.height - 1) continue;
-                    else col[x][y] = true;
-                }
         }
 
         if (fancyGraphics) {
@@ -220,6 +209,10 @@ var draw = function () {
         }
         else {
             ctx.fillRect(f.x, f.y, f.r, f.r);
+        }
+
+        if (isColliding(f)) {
+            collided = true;
         }
 
         ctx.stroke();
