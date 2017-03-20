@@ -1,0 +1,190 @@
+@font-face {
+    font-family: ocr;
+    font-style: normal;
+    font-weight: normal;
+    src: url("ocr");
+}
+
+#snackbar {
+    background-color: #333;
+    left: 50%;
+    width: 40vw;
+    margin-left: -20vw;
+    text-align: center;
+    font-family: ocr;
+    color: #4bcb2b;
+    position: fixed;
+    border-radius: 5px;
+    bottom: 5vh;
+    padding: 1vw;
+    z-index: 1;
+    transition: all ease 1s;
+}
+
+canvas {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    min-height: 100%;
+    text-align: center;
+    position: fixed;
+}
+
+.username-form {
+    position: fixed;
+    background-color: transparent;
+    transition: all ease-in-out .5s;
+    text-align: center;
+    top: 0;
+    width: 70vw;
+    margin: 10vh 0 0 15vw;
+    height: 70vh;
+}
+
+input {
+    width: 40vw;
+    padding: 14px 20px;
+    margin: 30vh 5vw 15vh 5vw;
+    border: 0;
+    border-bottom: 1px solid #ffffff;
+    background: transparent;
+    text-align: center;
+    color: #ffffff;
+    font-family: ocr;
+    font-size: 40px;
+    transition: all 1s ease-in-out;
+}
+
+input:hover, input:active, input:focus {
+    color: #4bcb2b;
+    text-shadow: 0px 0px 30px #5bc0de;
+    border-bottom-color: #4bcb2b;
+}
+
+button {
+    background-color: #14c8fa;
+    color: #ffffff;
+    padding: 14px 20px;
+    cursor: pointer;
+}
+
+.info-field {
+    text-align: center;
+}
+
+#overlay-logo {
+    margin: 20px;
+    width: 180px;
+    height: 110px;
+    float: left;
+    background: transparent url("Logo.png") center top no-repeat;
+    background-size: contain;
+    transition: all .5s ease;
+    display: block;
+}
+
+#loader-logo {
+    margin-top: 60px;
+    margin-left: 35px;
+    width: 100px;
+    height: 73.3px;
+    float: left;
+    background: transparent url("Logo.png") center top no-repeat;
+    background-size: contain;
+    transition: all .5s ease;
+    display: block;
+}
+
+#loader-logo:hover, #overlay-logo:hover {
+    background: transparent url("Logo Face.png") center top no-repeat;
+    background-size: contain;
+    transform: rotate3d(240, 200, 0, 30deg);
+}
+
+.overlay {
+    transition: visibility ease 1s;
+    background-color: #003f66;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.hide {
+    transition: all 1s ease-in-out !important;
+    visibility: hidden !important;
+    z-index: -1;
+}
+
+.show {
+    transition: all 1s ease-in-out !important;
+    visibility: visible !important;
+    animation: fadein 2s;
+    z-index: 1;
+}
+
+label {
+    color: #ffffff;
+    font-family: ocr;
+    text-align: center;
+}
+
+#card-text {
+    font-family: ocr;
+    font-size: 100px;
+    color: #007118;
+}
+
+#submit-un {
+    color: #ffffff;
+    font-family: ocr;
+    font-size: 50px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 4s ease-in-out;
+}
+
+#submit-un:hover {
+    color: #4bcb2b;
+    text-shadow: 0px 0px 30px #5bc0de;
+}
+
+#loader-icon {
+    position: fixed;
+    border-top: 15px solid #4bcb2b;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #5bc0de;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+}
+
+.loading {
+    animation: spin 3.5s infinite;
+}
+
+#loader {
+    width: 150px;
+    height: 150px;
+    margin-top: calc(50vh - 75px);
+    margin-left: calc(50vw - 75px);
+    position: fixed;
+    transition: all 1s ease-in-out !important;
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg)}
+    50% {transform: rotate(1080deg)}
+    100% {transform: rotate(0deg)}
+}

@@ -32,7 +32,7 @@ function queryGo() {
     setList(PLItems);
 
     console.log(PLItems);
-}
+};
 
 function buildRequests(playlistID) {
     var requests = {};
