@@ -131,7 +131,6 @@ var drawImg = function (j) {
         context.drawImage(newImg, canvas.width / 2 - j * inStepW, canvas.height / 2 - j * inStepH, canvas.width * (j / steps), canvas.height * (j / steps));
     }, j * 2);
 
-
     if (j < steps) drawImg(j + 1);
 };
 
