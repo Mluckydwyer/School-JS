@@ -10,8 +10,6 @@ var speed = 2;
 var steps = 1000 / speed;
 var loadTime = 3;
 var pics = [];
-var qorS = false; // Q = true, S = false
-var worker = null;
 
 var outStepH = null;
 var outStepW = null;
